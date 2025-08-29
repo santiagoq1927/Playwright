@@ -1,0 +1,30 @@
+Inicializar proyecto
+
+npm init playwright@latest
+npx playwright test
+
+npx playwright test NOMBRE-ARCHIVO --grep "nombre del test"
+npx playwright test register.spec.ts --grep "register"
+npx playwright test validateProduct.spec.ts --grep "validateProducts"
+
+npx playwright test NOMBRE-ARCHIVO
+npx playwright test register.spec.ts
+
+npx playwright test NOMBRE-ARCHIVO --grep "nombre del test" --debug
+npx playwright test register.spec.ts --grep "register" --debug
+
+npm install --save-dev @faker-js/faker
+
+
+npx playwright test register.spec.ts --grep "register" --debug
+
+java -jar jenkins.war
+
+git init
+git status
+git add *
+git status
+git commit -m "json"
+git branch -M main
+git remote add origin (url repo) https://github.com/santiagoq1927/playwright-udemy.git
+git push -u origin main
