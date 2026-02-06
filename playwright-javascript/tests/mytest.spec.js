@@ -1,16 +1,17 @@
 import { test, expect } from '@playwright/test';
+import {login} from './testutils';
 
 test.beforeAll('Setup', async()=>{
   console.log("Starting execution");
 });
 
 test.beforeEach('Test setup', async({page})=>{
-  await page.goto('https://www.saucedemo.com/');
+  await page.goto('/');
 });
 
-test.afterEach(async({page},testInfo)=>{
+/*test.afterEach(async({page},testInfo)=>{
   await page.screenshot({path:`${testInfo.title}.png`, fullPage:true});
-})
+});*/
 
 test.describe("Login", async()=>{
   
@@ -82,21 +83,25 @@ test.describe("Login and filter", async()=>{
     const lastProductPrice = page.locator("(//*[@class='inventory_item_price'])[last()]");
     const filterProducts = page.locator("//*[@class='product_sort_container']");
 
-    await page.locator("id=user-name").fill("standard_user");
-    await page.locator("id=password").fill("secret_sauce");
-    await page.locator("data-test=login-button").click();
+    await test.step('Login', async ()=>{
+      await page.locator("id=user-name").fill("standard_user");
+      await page.locator("id=password").fill("secret_sauce");
+      await page.locator("data-test=login-button").click();
+      await page.waitForURL("**/inventory.html");
+    });
 
-    await page.waitForURL("**/inventory.html");
+    await test.step('Select filter', async ()=>{
+      // by value
+      await filterProducts.selectOption("lohi");
+      //by lebel
+      //await filterProducts.selectOption({label:'Price (low to high)'});
+    });
 
-    // by value
-    await filterProducts.selectOption("lohi");
-
-    //by lebel
-    //await filterProducts.selectOption({label:'Price (low to high)'});
-
-    await expect(productsTitleLocator).toBeVisible();
-    await expect(firstProductPrice).toHaveText("$7.99");
-    await expect(lastProductPrice).toHaveText("$49.99");
+    await test.step('Validation price', async()=>{
+      await expect(productsTitleLocator).toBeVisible();
+      await expect(firstProductPrice).toHaveText("$7.99");
+      await expect(lastProductPrice).toHaveText("$49.99");
+    });
     
   });
 
@@ -106,19 +111,21 @@ test.describe("Login and filter", async()=>{
     const lastProductPrice = page.locator("(//*[@class='inventory_item_price'])[last()]");
     const filterProducts = page.locator("//*[@class='product_sort_container']");
 
-    await page.locator("id=user-name").fill("standard_user");
-    await page.locator("id=password").fill("secret_sauce");
-    await page.locator("data-test=login-button").click();
+    await test.step('Login', async()=>{
+      await login(page);
+    });
 
-    await page.waitForURL("**/inventory.html");
+    await test.step('Select filter', async ()=>{
+      await filterProducts.press("ArrowDown");
+      await filterProducts.press("ArrowDown");
+      await filterProducts.press("Enter");
+    });
 
-    await filterProducts.press("ArrowDown");
-    await filterProducts.press("ArrowDown");
-    await filterProducts.press("Enter");
-
-    await expect(productsTitleLocator).toBeVisible();
-    await expect(firstProductPrice).toHaveText("$7.99");
-    await expect(lastProductPrice).toHaveText("$49.99");
+    await test.step('Validate price', async()=>{
+      await expect(productsTitleLocator).toBeVisible();
+      await expect(firstProductPrice).toHaveText("$7.99");
+      await expect(lastProductPrice).toHaveText("$49.99");
+    });
     
   });    
 });
