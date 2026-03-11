@@ -1,0 +1,14 @@
+﻿{
+  "name": "saucedemo-copilot",
+  "version": "1.0.0",
+  "description": "Playwright automation for SauceDemo using Page Object Model",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
