@@ -1,0 +1,118 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - dialog "Place order" [active] [ref=e2]:
+    - document [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - heading "Place order" [level=5] [ref=e6]
+          - button "Close" [ref=e7] [cursor=pointer]: ×
+        - generic [ref=e9]:
+          - generic [ref=e10]: "Total: 1150"
+          - generic [ref=e11]:
+            - generic [ref=e12]: "Name:"
+            - 'textbox "Total: 1150 Name:" [ref=e13]': John Doe
+          - generic [ref=e14]:
+            - generic [ref=e15]: "Country:"
+            - textbox "Country:" [ref=e16]: USA
+          - generic [ref=e17]:
+            - generic [ref=e18]: "City:"
+            - textbox "City:" [ref=e19]: New York
+          - generic [ref=e20]:
+            - generic [ref=e21]: "Credit card:"
+            - textbox "Credit card:" [ref=e22]: "1234567890123456"
+          - generic [ref=e23]:
+            - generic [ref=e24]: "Month:"
+            - textbox "Month:" [ref=e25]: "12"
+          - generic [ref=e26]:
+            - generic [ref=e27]: "Year:"
+            - textbox "Year:" [ref=e28]: "2025"
+        - generic [ref=e30]:
+          - button "Close" [ref=e31]
+          - button "Purchase" [ref=e32]
+  - text:            X 
+  - navigation [ref=e33]:
+    - generic [ref=e34]:
+      - link "PRODUCT STORE" [ref=e35]:
+        - /url: index.html
+        - img [ref=e36]
+        - text: PRODUCT STORE
+      - list [ref=e38]:
+        - listitem [ref=e39]:
+          - link "Home (current)" [ref=e40]:
+            - /url: index.html
+            - text: Home
+            - generic [ref=e41]: (current)
+        - listitem [ref=e42]:
+          - link "Contact" [ref=e43]:
+            - /url: "#"
+        - listitem [ref=e44]:
+          - link "About us" [ref=e45]:
+            - /url: "#"
+        - listitem [ref=e46]:
+          - link "Cart" [ref=e47]:
+            - /url: "#"
+        - listitem [ref=e48]:
+          - link "Log in" [ref=e49]:
+            - /url: "#"
+        - listitem
+        - listitem
+        - listitem [ref=e50]:
+          - link "Sign up" [ref=e51]:
+            - /url: "#"
+  - generic [ref=e53]:
+    - generic [ref=e54]:
+      - heading "Products" [level=2] [ref=e55]
+      - table [ref=e57]:
+        - rowgroup [ref=e58]:
+          - row "Pic Title Price x" [ref=e59]:
+            - columnheader "Pic" [ref=e60]
+            - columnheader "Title" [ref=e61]
+            - columnheader "Price" [ref=e62]
+            - columnheader "x" [ref=e63]
+        - rowgroup [ref=e64]:
+          - row "Sony vaio i5 790 Delete" [ref=e65]:
+            - cell [ref=e66]:
+              - img [ref=e67]
+            - cell "Sony vaio i5" [ref=e68]
+            - cell "790" [ref=e69]
+            - cell "Delete" [ref=e70]:
+              - link "Delete" [ref=e71]:
+                - /url: "#"
+          - row "Samsung galaxy s6 360 Delete" [ref=e72]:
+            - cell [ref=e73]:
+              - img [ref=e74]
+            - cell "Samsung galaxy s6" [ref=e75]
+            - cell "360" [ref=e76]
+            - cell "Delete" [ref=e77]:
+              - link "Delete" [ref=e78]:
+                - /url: "#"
+    - generic [ref=e79]:
+      - heading "Total" [level=2] [ref=e80]
+      - heading "1150" [level=3] [ref=e83]
+      - button "Place Order" [ref=e84]
+  - generic [ref=e86]:
+    - generic [ref=e89]:
+      - heading "About Us" [level=4] [ref=e90]
+      - paragraph [ref=e91]: We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.
+    - generic [ref=e94]:
+      - heading "Get in Touch" [level=4] [ref=e95]
+      - paragraph [ref=e96]: "Address: 2390 El Camino Real"
+      - paragraph [ref=e97]: "Phone: +440 123456"
+      - paragraph [ref=e98]: "Email: demo@blazemeter.com"
+    - heading "PRODUCT STORE" [level=4] [ref=e102]:
+      - img [ref=e103]
+      - text: PRODUCT STORE
+  - contentinfo [ref=e104]:
+    - paragraph [ref=e105]: Copyright © Product Store
+  - generic [ref=e108]:
+    - heading "Thank you for your purchase!" [level=2] [ref=e114]
+    - paragraph [ref=e115]:
+      - text: "Id: 9132347"
+      - text: "Amount: 1150 USD"
+      - text: "Card Number: 1234567890123456"
+      - text: "Name: John Doe"
+      - text: "Date: 10/2/2026"
+    - button "OK" [ref=e118]
+```
