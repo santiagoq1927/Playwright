@@ -1,0 +1,2 @@
+curso de github llamado Automatización desde cero con Playwright y Typescript
+listo para mamejar con cicd

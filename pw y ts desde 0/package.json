@@ -1,0 +1,24 @@
+{
+  "name": "pw-y-ts-desde-0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean-results": "rimraf allure-results",
+    "run-test": "npx playwright test --reporter=line,allure-playwright --headed",
+    "open-report": "npx allure serve ./allure-results",
+    "test": "npm run clean-results && npm run run-test && npm run open-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.4.0",
+    "allure-playwright": "^3.7.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0"
+  }
+}
