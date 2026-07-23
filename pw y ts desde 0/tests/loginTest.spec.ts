@@ -8,6 +8,7 @@ import { CartPageMethods } from "../src/pages/cartPage/CartPageMethods";
 
 test.describe('Login test cases' , async () => {
     test('Login', async({page})=>{
+        //console.log('Login test case');
         const commoPage = new CommonPage(page);
         const loginMethods = new LoginPageMethods(page)
         const prodoctsPageMethods = new ProductsPageMethods(page);
