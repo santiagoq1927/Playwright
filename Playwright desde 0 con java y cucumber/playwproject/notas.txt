@@ -1,0 +1,9 @@
+Proyecto curso udemy de: PlayWright Desde 0 con Java y Cucumber
+Editor de codigo: Visual studio code
+Maven
+
+Compilar codigo y ejecutar codigo:
+cd "c:\Users\Equipo\Downloads\Playwright desde 0 con java y cucumber\playwproject"
+mvn test-compile
+java -cp "target/test-classes;target/classes" quijano.Validation
+
